@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jquery_ui: MyString
+  index: MyString
+
+two:
+  jquery_ui: MyString
+  index: MyString

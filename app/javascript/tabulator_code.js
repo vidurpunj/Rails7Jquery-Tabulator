@@ -1,7 +1,5 @@
 import {TabulatorFull as Tabulator} from 'tabulator-tables';
 window.Tabulator = Tabulator
-// while we are here make sure you have
-window.bootstrap = bootstrap
 
 //define some sample data
 var tabledata = [
