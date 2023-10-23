@@ -1,24 +1,8 @@
-# README
+For Hotwire to work follow the github guide line on
+https://github.com/hotwired/turbo-rails
+bundle install
+rails turbo:install
+rails turbo:install:redis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Also check if redis server is installed and working in you ubuntu.
+sudo service redis-server status
