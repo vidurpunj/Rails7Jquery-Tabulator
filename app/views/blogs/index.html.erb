@@ -1,0 +1,15 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>New Blogs</h1>
+
+  <%= render "form", blog: @blog %>
+
+  <div id="blogs">
+    <%= turbo_stream_from "blogs" %>
+    <%= turbo_frame_tag "blogs" do %>
+      <%= render @blogs %>
+    <% end %>
+  </div>
+</div>
+

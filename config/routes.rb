@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
   resources :tweets
   get 'hotwire/index'
   get 'jquery_ui/index'
@@ -7,4 +8,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   post '/likes/create/:tweet_id', to: "likes#create", as: "tweet_like"
   post '/retweet/create/:tweet_id', to: "retweet#create", as: "tweet_retweet"
+  post '/blog_likes/create/:blog_id', to: "blog_likes#create", as: "blog_likes"
+  post '/blog_reposts/create/:blog_id', to: "blog_reposts#create", as: "blog_reposts"
 end

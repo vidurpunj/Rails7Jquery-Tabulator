@@ -1,0 +1,15 @@
+<%= turbo_frame_tag dom_id(blog) do %>
+  <p>
+    <strong>Body:</strong>
+    <%= blog.body %>
+  </p>
+
+  <p>
+    <strong>Blog likes count:</strong>
+    <%= blog.blog_likes_count %>
+    <%= button_to "Blog Likes (#{blog.blog_likes_count})", blog_likes_path(blog) %>
+    <strong>Blog reposts count:</strong>
+    <%= button_to "Blog reposts (#{blog.blog_reposts_count})", blog_reposts_path(blog) %>
+  </p>
+
+<% end %>
