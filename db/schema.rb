@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_202439) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_25_221536) do
   create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body"
     t.integer "blog_likes_count"
     t.integer "blog_reposts_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "body"
+    t.integer "post_like"
+    t.integer "post_reposts"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

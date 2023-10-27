@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :blogs
   resources :tweets
   get 'hotwire/index'
@@ -10,4 +11,7 @@ Rails.application.routes.draw do
   post '/retweet/create/:tweet_id', to: "retweet#create", as: "tweet_retweet"
   post '/blog_likes/create/:blog_id', to: "blog_likes#create", as: "blog_likes"
   post '/blog_reposts/create/:blog_id', to: "blog_reposts#create", as: "blog_reposts"
+
+  post '/post_likes/create/:post_id', to: 'post_likes#create', as: 'post_likes'
+  post '/post_reposts/create/:post_id', to: 'post_reposts#create', as: 'post_reposts'
 end

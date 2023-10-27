@@ -1,0 +1,18 @@
+<%= turbo_frame_tag dom_id post do %>
+  <p>
+    <strong>Body:</strong>
+    <%= post.body %>
+  </p>
+
+  <p>
+    <strong>Post like:</strong>
+    <%= button_to "post likes (#{post.post_like})", post_likes_path(post) %>
+  </p>
+
+  <p>
+    <strong>Post reposts:</strong>
+    <%= button_to "post resposts (#{post.post_reposts})", post_reposts_path(post) %>
+    <%= %>
+  </p>
+
+<% end %>
