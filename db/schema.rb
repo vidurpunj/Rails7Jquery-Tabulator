@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_02_192707) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_02_195606) do
   create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body"
     t.integer "blog_likes_count"
     t.integer "blog_reposts_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "designation"
+    t.bigint "user_id", null: false
+    t.bigint "manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manager_id"], name: "fk_rails_0fe1519b79"
+    t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
   create_table "friendships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -54,6 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_02_192707) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "employees", "employees", column: "manager_id"
+  add_foreign_key "employees", "users"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
 end
