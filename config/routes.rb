@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user_friends/index'
   resources :users
   resources :posts
   resources :blogs
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
 
   post '/post_likes/create/:post_id', to: 'post_likes#create', as: 'post_likes'
   post '/post_reposts/create/:post_id', to: 'post_reposts#create', as: 'post_reposts'
+
+  get 'user_friends/index', to: 'user_friends#index', as: 'users_list'
+  get 'user_friends/user/:user_id', to: 'user_friends#friends', as: 'users_friends'
 end

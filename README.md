@@ -9,4 +9,11 @@ Also check if redis server is installed and working in you ubuntu.
 sudo service redis-server status
 1. jbuilder:
     rails g scaffolf friends user:references
-2. 
+2. ]
+
+Manage Complex Relation using association: 
+1. FriendShips:
+rails generate model Friendship user:references friend:references
+
+2. Employee and Manager:
+rails generate model Employee name:string manager_id:integer
