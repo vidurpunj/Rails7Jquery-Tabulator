@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'user_friends/index'
   resources :users
   resources :posts
@@ -19,4 +20,8 @@ Rails.application.routes.draw do
 
   get 'user_friends/index', to: 'user_friends#index', as: 'users_list'
   get 'user_friends/user/:user_id', to: 'user_friends#friends', as: 'users_friends'
+  
+  namespace :one_drive do 
+    get :users_list, to: 'one_drive#user', as: :users
+  end
 end

@@ -73,3 +73,6 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem 'devise'
+gem 'active_model_serializers', '~> 0.10.2'
